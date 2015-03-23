@@ -1,4 +1,4 @@
-<?php    defined('C5_EXECUTE') or die("Access Denied.");  
+<?php    defined('C5_EXECUTE') or die("Access Denied.");
 
 /**
  * Global Areas block
@@ -10,12 +10,12 @@
  * @copyright  Copyright (c) 2011 Michael Krasnow. (http://www.c5rockstars.com)
  *
  */
- 
+
 //get the current page object
 $c = Page::getCurrentPage();
 //get the current page's ID
 $page = $c->getCollectionID();
-$target = Page::getByID($targetCID);
+$target = Page::getByID($targetCID, 'ACTIVE');
 $name = $target->getCollectionName();
 
 //make sure the page isn't the same as the area that we are going to show
@@ -34,12 +34,12 @@ if($page != $targetCID) {
 	$a = new Area($tarHandle);
 	$a->disableControls();
 	$a->display($target);
-	
+
 } else if($c->isEditMode()) { //otherwise, if its editmode show a nice message
 
 	echo '<div class="ccm-edit-mode-disabled-item">';
 	echo '<div style="padding:8px 0px;">'.t("You cannot choose an area on the same page!").'</div>';
 	echo '</div>';
-	
+
 }
 ?>
