@@ -17,7 +17,7 @@ class GlobalAreasPackage extends Package {
 
 	protected $pkgHandle = 'global_areas';
 	protected $appVersionRequired = '5.4.0';
-	protected $pkgVersion = '1.0';
+	protected $pkgVersion = '1.1';
 	
 	public function getPackageName() {
 		return t("Global Areas");
